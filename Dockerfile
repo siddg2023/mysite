@@ -9,8 +9,8 @@ COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Mounts the application code to the image
-COPY . code
-WORKDIR /code
+COPY . mysite
+WORKDIR /mysite
 
 EXPOSE 8000
 
