@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Profile</title>
+</head>
+<body>
+    <h2>Create Your Profile</h2>
+    <form method="post" action="{% url 'create_profile' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Profile</button>
+    </form>
+</body>
+</html>
+
