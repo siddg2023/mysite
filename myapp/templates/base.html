@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My Site{% endblock %}</title>
     <!-- Additional head elements, stylesheets, or scripts can be included here -->
+    {% load static %} <!-- Add this line to load the static template tag -->
+    <link rel="stylesheet" href="{% static 'myapp/css/styles.css' %}">
 </head>
 <body>
 
@@ -14,13 +16,16 @@
         <nav>
             <ul>
                 <li><a href="{% url 'signup' %}">Signup</a></li>
+                <li><a href="{% url 'custom_login' %}">Login</a></li>
                 <!-- Add other navigation links as needed -->
             </ul>
         </nav>
     </header>
 
     <main>
-        {% block content %}{% endblock %}
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
     </main>
 
     <footer>
