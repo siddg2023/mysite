@@ -24,7 +24,7 @@
 # CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 # Use an official Python runtime as a parent image
-FROM python:3.8
+FROM python:3.9
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -45,6 +45,5 @@ COPY . .
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
 
-# Run Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "mysite.wsgi:application"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
