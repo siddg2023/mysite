@@ -1,0 +1,28 @@
+<!-- recruiter_dashboard.html -->
+{% extends 'base.html' %}
+
+{% block title %}Recruiter Dashboard{% endblock %}
+
+{% block content %}
+   <h2>Recruiter Dashboard</h2>
+
+   <div class="dashboard">
+       <div class="profile-card">
+           <h3>Your Profile</h3>
+           <p>Name: {{ recruiter_profile.user.username }}</p>
+           <p>Company: {{ recruiter_profile.company }}</p>
+           <!-- Add other recruiter-specific fields as needed -->
+       </div>
+
+       {% for other_user_profile in other_user_profiles %}
+           <a href="{% url 'profile_detail' other_user_profile.user.username %}" class="profile-link">
+               <div class="profile-card">
+                   <h3>{{other_user_profile.first_name}}'s Profile</h3>
+                   <p>Name: {{ other_user_profile.first_name }} {{ other_user_profile.last_name }}</p>
+                   <p>Area of Study: {{ other_user_profile.major_area_of_study }}</p>
+                   <p>Bio: {{ other_user_profile.bio }}</p>
+               </div>
+           </a>
+       {% endfor %}
+   </div>
+{% endblock %}

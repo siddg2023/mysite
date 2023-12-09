@@ -1,0 +1,11 @@
+<!-- templates/recruiter_login.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Recruiter Login</h2>
+    <form method="post" action="{% url 'recruiter_login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+{% endblock %}

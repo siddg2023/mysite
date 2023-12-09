@@ -85,3 +85,19 @@ button:hover {
 }
 
 /* Your additional styles can be added here */
+
+/* Add this CSS to make the profiles container horizontally scrollable */
+.scrollable-container {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Add this CSS to style each profile card */
+.profile-card {
+    display: inline-block;
+    width: 300px; /* Adjust the width based on your design */
+    margin-right: 10px; /* Adjust the margin between cards */
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
